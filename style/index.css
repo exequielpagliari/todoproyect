@@ -1,19 +1,30 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-.list{
+.list {
     width: 80%;
     background-color: gray;
+
 }
 
-.element{
+.element {
     display: flex;
     justify-content: space-around;
-    
+
+}
+
+.todoCheck {
+    width: 20px;
+}
+
+.inputs input{
+    max-width: 100%;
 }
