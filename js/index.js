@@ -32,9 +32,22 @@ function eventListener() {
 function addPush() {
     eraselist("lang")
     for (let index = 0; index < Todo.length; index++) {
+        //create elements for use / se crean los elementos para su uso
         var ul = document.getElementById("lang");
         var li = document.createElement("li");
-        li.innerHTML = Todo[index]
+        var sec1 = document.createElement("section")
+        var sec2 = document.createElement("section")
+        var check = document.createElement("input")
+        //set attribute / se connfiguran los elementos
+        li.setAttribute("class", "element")
+        check.setAttribute("type","checkbox")
+        sec1.setAttribute("class", "todoCheck")
+        sec2.setAttribute("class", "todoText")
+        //set value and paking elements
+        sec2.innerHTML = Todo[index]
+        sec1.appendChild(check)
+        li.appendChild(sec1)
+        li.appendChild(sec2)
         ul.appendChild(li);
     }
 }
