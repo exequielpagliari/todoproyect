@@ -26,7 +26,9 @@ buttonAdd.addEventListener(
 function eventListener() {
     
     addToDo();
-    addPush()
+    eraseInput();
+    addPush();
+    
 }
 //Renders the ToDo elements in the lang list / Representa los elementos de ToDo en la lista lang
 function addPush() {
@@ -41,9 +43,10 @@ function addPush() {
         //set attribute / se connfiguran los elementos
         li.setAttribute("class", "element")
         check.setAttribute("type","checkbox")
+        check.setAttribute("id",`${index}`)
         sec1.setAttribute("class", "todoCheck")
         sec2.setAttribute("class", "todoText")
-        //set value and paking elements
+        //set value and paking elements / Se agregan los valores y se empacan dentro del contenedor
         sec2.innerHTML = Todo[index]
         sec1.appendChild(check)
         li.appendChild(sec1)
@@ -56,4 +59,8 @@ function addPush() {
 function eraselist(listId) {
     var ul = document.getElementById(`${listId}`);
     ul.innerHTML = ""
+}
+
+function eraseInput(){
+    textInput.value = ""
 }
