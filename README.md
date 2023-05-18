@@ -1,8 +1,19 @@
 # todoproyect
 
-Un proyecto de una simple lista de cosas para hacer (ToDo) que tendré como práctica.
-
 This project is a simple ToDo  list for practice to JS, CSS and HTML.
+
+Any observation is welcome to continue learning in this world that is the development of applications.
+
+The application must meet the following conditions:
+
+- You must have a list where the pending will appear.
+- It must have a text input with a button to add new pending.
+- Pending must also be added when pressing the enter buttons on the keyboard and the numeric keypad.
+- The items on the list must have a checkbox, which will toggle depending on whether the pending items are finished or not.
+- Each element that is finished will change its style and its letter will be gray and crossed out.
+- The information must be stored in the local storage of the browser.
+
+Este proyecto es una simple lista de cosas para hacer (ToDo) que tendré como práctica.
 
 Cualquier observación es bienvenida para poder continuar aprendiendo en este mundo que es el desarrollo de aplicaciones.
 
