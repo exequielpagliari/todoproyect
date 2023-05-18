@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.list{
+    width: 80%;
+    background-color: gray;
+}
+
+.element{
+    display: flex;
+    justify-content: space-around;
+    
+}
