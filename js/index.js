@@ -29,7 +29,7 @@ function eventListener() {
 
     addToDo();
     eraseInput();
-    nodeAdd();
+    eraseCheck();
     addPush();
     
 }
@@ -63,14 +63,14 @@ function eraselist(listId) {
     var ul = document.getElementById(`${listId}`);
     ul.innerHTML = ""
 }
-
+//Erase Input Text Value / Borra el valor del Input de Texto
 function eraseInput() {
     textInput.value = ""
 }
 
 
-
-function nodeAdd(){
+//Find all the Selected CheckBoxes and delete their container. / Busca todos los CheckBox Seleccionados y borra su contenedor.
+function eraseCheck(){
     var current_tasks = document.querySelectorAll(".check");
     console.log(current_tasks)
     for (var i = 0; i < current_tasks.length; i++) {
@@ -86,7 +86,7 @@ function nodeAdd(){
 
 }
 
-
+// Finds all Selected CheckBoxes and changes the class remove to todoCheck based on the value of the CheckBox/ Busca todos los CheckBox Seleccionados y cambia la clase remove a todoCheck según el valor de CheckBox
 
 function linThrough(){
     var current_tasks = document.querySelectorAll(".check");
