@@ -11,20 +11,39 @@
 
 .list {
     width: 80%;
-    background-color: gray;
+    background-color: lemonchiffon;
+    margin: 0;
+    padding: 0;
+
 
 }
 
 .element {
     display: flex;
-    justify-content: space-around;
+    justify-content: left;
+    margin: 0;
 
+}
+
+li:nth-child(2n) {
+    background:
+        lightgreen;
 }
 
 .todoCheck {
-    width: 20px;
+    display: flex;
+    justify-content: left;
+    margin: 0;
 }
 
-.inputs input{
+.inputs input {
     max-width: 100%;
+}
+
+input:checked ~ .todoText{
+    text-decoration: line-through;
+}
+
+.todoText {
+    padding-left: 1rem;
 }

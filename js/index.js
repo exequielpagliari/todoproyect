@@ -10,10 +10,10 @@ const Todo = []
 
 //Add textinput value to Array / Agrega valor de textimput a Array
 function addToDo() {
-    if(textInput.value.length > 0){
+    if (textInput.value.length > 0) {
         Todo.push(textInput.value)
     }
-    
+
 }
 
 //Detect event in buttonAdd / Detecta evento en buttonAdd
@@ -24,11 +24,11 @@ buttonAdd.addEventListener(
 
 //Funtion from event / Funcion del evento
 function eventListener() {
-    
+
     addToDo();
     eraseInput();
     addPush();
-    
+    nodeAdd()
 }
 //Renders the ToDo elements in the lang list / Representa los elementos de ToDo en la lista lang
 function addPush() {
@@ -38,20 +38,19 @@ function addPush() {
         var ul = document.getElementById("lang");
         var li = document.createElement("li");
         var sec1 = document.createElement("section")
-        var sec2 = document.createElement("section")
         var check = document.createElement("input")
+        const textNode = document.createTextNode(`${Todo[index]}`)
         //set attribute / se connfiguran los elementos
         li.setAttribute("class", "element")
-        check.setAttribute("type","checkbox")
-        check.setAttribute("id",`${index}`)
+        check.setAttribute("type", "checkbox")
+        check.setAttribute("class", `check`)
         sec1.setAttribute("class", "todoCheck")
-        sec2.setAttribute("class", "todoText")
         //set value and paking elements / Se agregan los valores y se empacan dentro del contenedor
-        sec2.innerHTML = Todo[index]
         sec1.appendChild(check)
+        sec1.appendChild(textNode)
         li.appendChild(sec1)
-        li.appendChild(sec2)
         ul.appendChild(li);
+
     }
 }
 
@@ -61,6 +60,18 @@ function eraselist(listId) {
     ul.innerHTML = ""
 }
 
-function eraseInput(){
+function eraseInput() {
     textInput.value = ""
+}
+
+
+
+function nodeAdd(){
+    var current_tasks = document.querySelectorAll(".check");
+    console.log(current_tasks)
+    for (var i = 0; i < current_tasks.length; i++) {
+        current_tasks[i].onclick = function () {
+            this.parentNode.remove();
+        }
+    }
 }
