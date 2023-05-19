@@ -3,7 +3,9 @@
 //Inicializate array ToDo / Inicializa el array ToDo
 const buttonAdd = document.getElementById("add");
 const textInput = document.getElementById("inputText")
+
 const Todo = []
+const Comp = []
 
 
 
@@ -27,8 +29,9 @@ function eventListener() {
 
     addToDo();
     eraseInput();
+    nodeAdd();
     addPush();
-    nodeAdd()
+    
 }
 //Renders the ToDo elements in the lang list / Representa los elementos de ToDo en la lista lang
 function addPush() {
@@ -44,6 +47,7 @@ function addPush() {
         li.setAttribute("class", "element")
         check.setAttribute("type", "checkbox")
         check.setAttribute("class", `check`)
+        check.setAttribute(`onclick`,`linThrough()`)
         sec1.setAttribute("class", "todoCheck")
         //set value and paking elements / Se agregan los valores y se empacan dentro del contenedor
         sec1.appendChild(check)
@@ -70,8 +74,32 @@ function nodeAdd(){
     var current_tasks = document.querySelectorAll(".check");
     console.log(current_tasks)
     for (var i = 0; i < current_tasks.length; i++) {
-        current_tasks[i].onclick = function () {
-            this.parentNode.remove();
+        console.log(current_tasks[i].checked)
+        if (current_tasks[i].checked == true) {
+
+            Comp.push(`${Todo.splice(i,1)}`);
+            console.log(Todo)
+            console.log(Comp)
+            
         }
     }
+
+}
+
+
+
+function linThrough(){
+    var current_tasks = document.querySelectorAll(".check");
+    console.log(current_tasks)
+    for (var i = 0; i < current_tasks.length; i++) {
+        console.log(current_tasks[i].checked)
+        if (current_tasks[i].checked == true) {
+
+            current_tasks[i].parentNode.setAttribute(`class`, 'remove')
+            
+        }
+
+        else { current_tasks[i].parentNode.setAttribute(`class`, 'todoCheck') }
+    }
+
 }

@@ -40,10 +40,13 @@ li:nth-child(2n) {
     max-width: 100%;
 }
 
-input:checked ~ .todoText{
-    text-decoration: line-through;
-}
+
 
 .todoText {
     padding-left: 1rem;
+}
+
+.remove{
+    padding-left: 1rem;
+    text-decoration: line-through;
 }
