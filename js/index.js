@@ -2,6 +2,7 @@
 //Create const from buttom add and inputtext HTML / Crea las constantes del boton add e inputtext del HTML
 //Inicializate array ToDo / Inicializa el array ToDo
 const buttonAdd = document.getElementById("add");
+const buttonClear = document.getElementById("clear");
 const textInput = document.getElementById("inputText")
 
 const Todo = []
@@ -21,18 +22,36 @@ function addToDo() {
 //Detect event in buttonAdd / Detecta evento en buttonAdd
 buttonAdd.addEventListener(
     "click",
-    eventListener,
+    eventAdd,
     {});
 
 //Funtion from event / Funcion del evento
-function eventListener() {
+function eventAdd() {
 
     addToDo();
     eraseInput();
-    eraseCheck();
+    eraseCheck()
     addPush();
     
 }
+
+//Detect event in buttonAdd / Detecta evento en buttonAdd
+buttonClear.addEventListener(
+    "click",
+    eventClear,
+    {});
+
+//Funtion from event / Funcion del evento
+function eventClear() {
+
+
+
+    eraseCheck();
+    addPush();
+
+    
+}
+
 //Renders the ToDo elements in the lang list / Representa los elementos de ToDo en la lista lang
 function addPush() {
     eraselist("lang")
@@ -73,13 +92,16 @@ function eraseInput() {
 function eraseCheck(){
     var current_tasks = document.querySelectorAll(".check");
     console.log(current_tasks)
+    var dif = 0;
     for (var i = 0; i < current_tasks.length; i++) {
         console.log(current_tasks[i].checked)
         if (current_tasks[i].checked == true) {
-
-            Comp.push(`${Todo.splice(i,1)}`);
+            
+            Comp.push(`${Todo.splice(i - dif,1)}`);
             console.log(Todo)
             console.log(Comp)
+            dif++
+            
             
         }
     }
